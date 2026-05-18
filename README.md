@@ -293,3 +293,76 @@ Clone the Microsoft AirSim repository:
 ```bash
 git clone https://github.com/microsoft/AirSim.git
 
+# Step 3 — Open the Blocks Environment
+
+Place the `Blocks` project folder inside:
+
+```text
+AirSim/Unreal/Environments/
+```
+
+---
+
+# Step 4 — Generate Project Files
+
+Inside the Blocks directory:
+
+```bash
+GenerateProjectFiles.sh
+```
+
+---
+
+# Step 5 — Build the Unreal Project
+
+```bash
+~/UE4.27/Engine/Build/BatchFiles/Linux/Build.sh BlocksEditor Linux Development ~/AirSim/Unreal/Environments/Blocks/Blocks.uproject
+```
+
+---
+
+# Step 6 — Launch Unreal Engine
+
+```bash
+~/UE4.27/Engine/Binaries/Linux/UE4Editor ~/AirSim/Unreal/Environments/Blocks/Blocks.uproject
+```
+
+---
+
+# Step 7 — Run the Python AI Script
+
+Navigate to:
+
+```text
+AirSim/PythonClient/multirotor
+```
+
+Run:
+
+```bash
+python3 agri_drone.py
+```
+
+---
+
+# Step 8 — Start the Simulation
+
+Inside Unreal Engine:
+- press Play,
+- launch the Python AI script,
+- and observe the fully autonomous mission execution.
+
+---
+
+# Final Notes
+
+This project demonstrates how autonomous UAV systems can combine:
+- AI decision-making,
+- environmental awareness,
+- tactical visualisation,
+- telemetry systems,
+- and autonomous treatment behaviour
+
+inside a fully simulated agricultural environment.
+
+The system was designed to emulate realistic autonomous crop treatment operations while maintaining real-time visual feedback and mission transparency through a tactical command-and-control interface.
