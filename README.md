@@ -114,7 +114,7 @@ This allows the UAV to behave more intelligently than simple sequential waypoint
 
 The drone operates through several autonomous mission phases.
 
-## 1. Initialisation Phase
+#1. Initialisation Phase
 
 During startup:
 - AirSim connects,
@@ -123,8 +123,6 @@ During startup:
 - tactical telemetry is initialised,
 - and the drone arms automatically.
 
----
-
 #2. Takeoff Phase
 
 The UAV:
@@ -132,8 +130,6 @@ The UAV:
 - lifts off,
 - ascends to operational altitude,
 - and transitions into exploration mode.
-
----
 
 #3. Exploration Phase
 
@@ -146,8 +142,6 @@ Diseased crops are:
 - added to the task queue,
 - and prioritised for treatment.
 
----
-
 #4. Priority Targeting Phase
 
 The AI sorts detected targets according to:
@@ -156,8 +150,6 @@ The AI sorts detected targets according to:
 
 The drone then selects the highest-priority target autonomously.
 
----
-
 #5. Navigation Phase
 
 The UAV:
@@ -165,9 +157,7 @@ The UAV:
 - stabilises above the target,
 - and prepares for treatment.
 
----
-
-## 6. Spraying Phase
+#6. Spraying Phase
 
 The drone sprays the diseased crop.
 
@@ -186,15 +176,13 @@ After treatment:
 
 ---
 
-## 7. Return Home Phase
+#7. Return Home Phase
 
 After all targets are processed:
 - the UAV returns to the launch area,
 - descends safely,
 - lands autonomously,
 - and disarms.
-
----
 
 #Tactical Command-and-Control UI
 
@@ -208,8 +196,6 @@ The interface displays:
 - treatment queue size,
 - spray count,
 - and a live tactical crop grid.
-
-
 
 #Live Tactical Grid
 
