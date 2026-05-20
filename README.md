@@ -1,8 +1,8 @@
-# Autonomous Agricultural Drone Simulation
+#Autonomous Agricultural Drone Simulation
 
-## Overview
+#Overview
 
-This project is a fully autonomous agricultural drone simulation developed using **Unreal Engine 4.27**, **Microsoft AirSim**, and **Python AI mission logic**.
+This project is a fully autonomous agricultural drone simulation developed using Unreal Engine 4.27, **Microsoft AirSim**, and **Python AI mission logic**.
 
 The purpose of the simulation is to demonstrate how an autonomous UAV can:
 - survey a crop field,
@@ -20,11 +20,10 @@ The system combines:
 
 The simulation was built entirely inside Unreal Engine 4.27 using AirSim as the UAV simulation layer and Python as the autonomous mission controller.
 
----
 
-# Core Features
+#Core Features
 
-## Autonomous UAV Behaviour
+Autonomous UAV Behaviour
 
 The drone operates completely autonomously once the simulation begins.
 
@@ -41,9 +40,9 @@ The UAV:
 
 No manual piloting is required.
 
----
 
-# Crop Disease Simulation
+
+#Crop Disease Simulation
 
 The crop field consists of a 5x5 grid of crop cells.
 
@@ -63,9 +62,9 @@ Each crop can exist in one of four health categories:
 
 Disease severity is visually represented using dynamic material changes inside Unreal Engine.
 
----
 
-# AI Perception System
+
+#AI Perception System
 
 The drone does not immediately know the state of the entire field.
 
@@ -84,9 +83,9 @@ The drone explores the field incrementally and discovers crop states dynamically
 
 This creates more realistic autonomous behaviour compared to hardcoded omniscient pathing systems.
 
----
 
-# Intelligent Decision-Making System
+
+#Intelligent Decision-Making System
 
 The AI mission logic is entirely controlled through Python.
 
@@ -109,9 +108,9 @@ The prioritisation system favours:
 
 This allows the UAV to behave more intelligently than simple sequential waypoint systems.
 
----
 
-# Mission Phases
+
+#Mission Phases
 
 The drone operates through several autonomous mission phases.
 
@@ -126,7 +125,7 @@ During startup:
 
 ---
 
-## 2. Takeoff Phase
+#2. Takeoff Phase
 
 The UAV:
 - arms,
@@ -136,7 +135,7 @@ The UAV:
 
 ---
 
-## 3. Exploration Phase
+#3. Exploration Phase
 
 The drone scans surrounding regions using a local perception radius.
 
@@ -149,7 +148,7 @@ Diseased crops are:
 
 ---
 
-## 4. Priority Targeting Phase
+#4. Priority Targeting Phase
 
 The AI sorts detected targets according to:
 - disease severity,
@@ -159,7 +158,7 @@ The drone then selects the highest-priority target autonomously.
 
 ---
 
-## 5. Navigation Phase
+#5. Navigation Phase
 
 The UAV:
 - navigates to the selected crop,
@@ -197,7 +196,7 @@ After all targets are processed:
 
 ---
 
-# Tactical Command-and-Control UI
+#Tactical Command-and-Control UI
 
 A real-time tactical UI was developed entirely inside Unreal Engine using UMG widgets.
 
@@ -210,9 +209,9 @@ The interface displays:
 - spray count,
 - and a live tactical crop grid.
 
----
 
-# Live Tactical Grid
+
+#Live Tactical Grid
 
 The tactical map is a fully dynamic 2D battlefield-style grid.
 
@@ -230,9 +229,9 @@ Tile colours update live according to crop health state:
 
 The tactical display updates continuously using live telemetry transferred from Python into Unreal Engine.
 
----
 
-# Telemetry System
+
+#Telemetry System
 
 The simulation includes a custom telemetry bridge between Python and Unreal Engine.
 
@@ -251,9 +250,9 @@ This allows:
 - tactical rendering,
 - and real-time mission monitoring.
 
----
 
-# Technologies Used
+
+#Technologies Used
 
 | Technology | Purpose |
 |---|---|
@@ -267,9 +266,9 @@ This allows:
 
 ---
 
-# Recreating the Project
+#Recreating the Project
 
-## Requirements
+#Requirements
 
 Before recreating the project, install:
 
@@ -278,83 +277,57 @@ Before recreating the project, install:
 - Python 3
 - Ubuntu Linux (recommended)
 
----
 
-# Step 1 — Install Unreal Engine 4.27
+#Step 1 — Install Unreal Engine 4.27
 
 Clone and build Unreal Engine 4.27 from Epic Games source.
 
----
 
-# Step 2 — Install AirSim
+
+#Step 2 — Install AirSim
 
 Clone the Microsoft AirSim repository:
 
-```bash
 git clone https://github.com/microsoft/AirSim.git
 
-# Step 3 — Open the Blocks Environment
+Step 3 — Open the Blocks Environment
 
 Place the `Blocks` project folder inside:
 
-```text
 AirSim/Unreal/Environments/
-```
 
----
-
-# Step 4 — Generate Project Files
+#Step 4 — Generate Project Files
 
 Inside the Blocks directory:
 
-```bash
 GenerateProjectFiles.sh
-```
 
----
+#Step 5 — Build the Unreal Project
 
-# Step 5 — Build the Unreal Project
-
-```bash
 ~/UE4.27/Engine/Build/BatchFiles/Linux/Build.sh BlocksEditor Linux Development ~/AirSim/Unreal/Environments/Blocks/Blocks.uproject
-```
 
----
+#Step 6 — Launch Unreal Engine
 
-# Step 6 — Launch Unreal Engine
-
-```bash
 ~/UE4.27/Engine/Binaries/Linux/UE4Editor ~/AirSim/Unreal/Environments/Blocks/Blocks.uproject
-```
 
----
-
-# Step 7 — Run the Python AI Script
+#Step 7 — Run the Python AI Script
 
 Navigate to:
 
-```text
 AirSim/PythonClient/multirotor
-```
 
 Run:
 
-```bash
 python3 agri_drone.py
-```
 
----
-
-# Step 8 — Start the Simulation
+#Step 8 — Start the Simulation
 
 Inside Unreal Engine:
 - press Play,
 - launch the Python AI script,
 - and observe the fully autonomous mission execution.
 
----
-
-# Final Notes
+#Final Notes
 
 This project demonstrates how autonomous UAV systems can combine:
 - AI decision-making,
